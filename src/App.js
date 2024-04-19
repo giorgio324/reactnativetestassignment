@@ -1,11 +1,11 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import './App.css'
-import { useState, createContext } from 'react'
-import List from './routes/List'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import './App.css';
+import { useState, createContext } from 'react';
+import List from './routes/List';
 
-import { Home } from './routes/Home'
+import { Home } from './routes/Home';
 
-export const AppContext = createContext(null)
+export const AppContext = createContext(null);
 
 const router = createBrowserRouter([
   {
@@ -16,15 +16,15 @@ const router = createBrowserRouter([
     path: 'list',
     element: <List />,
   },
-])
+]);
 
 function App() {
-  const [state, setState] = useState(null)
+  const [state, setState] = useState(null);
   return (
     <AppContext.Provider value={{ state, setState }}>
       <RouterProvider router={router} />
     </AppContext.Provider>
-  )
+  );
 }
 
-export default App
+export default App;
